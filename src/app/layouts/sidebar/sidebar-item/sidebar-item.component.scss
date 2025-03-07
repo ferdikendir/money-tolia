@@ -1,0 +1,44 @@
+.header {
+    @apply text-[var(--background-app-bar)] h-[20px] flex items-center;
+}
+
+.sub-header {
+    margin-left: 1.5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    @apply text-[var(--background-app-bar)];
+}
+
+.sidenav-item {
+    align-items: center;
+    box-sizing: border-box;
+    color: var(--sidenav-item-color);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    font: 400 14px / 20px Roboto,
+        "Helvetica Neue",
+        sans-serif;
+    ;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &.sidenav-item--active {
+        background: var(--sidenav-item-background-active);
+
+        .sidenav-item__label {
+            color: var(--sidenav-item-color-active);
+        }
+    }
+
+    &:hover {
+        background: var(--sidenav-item-background-hover);
+
+        .sidenav-item__label {
+            color: var(--sidenav-item-color-hover);
+        }
+    }
+}

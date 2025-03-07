@@ -1,0 +1,5 @@
+:host {
+    height: calc(100vh - var(--navigation-height));
+    width: var(--sidenav-container-width);
+    @apply bg-[var(--sidenav-background)];
+}
