@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SidebarItemComponent } from './sidebar-item/sidebar-item.component';
 import { NavigationItem } from '@core/api/navigation/navigation.model';
 
@@ -20,12 +19,12 @@ export class SidebarComponent {
       children: [
         {
           label: 'Campaign List',
-          route: '/campaign/list',
+          route: '/campaigns',
           type: 'link'
         },
         {
           label: 'Create Campaign',
-          route: '/campaign/create',
+          route: '/campaigns/new',
           type: 'link'
         }
       ]
