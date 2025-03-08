@@ -1,0 +1,44 @@
+<div class="flex flex-row w-full h-[200px] shadow-lg p-2 gap-2">
+
+  <div class="flex flex-col items-center justify-center w-1/5">
+
+    <p>{{campaign().score}}</p>
+
+    <div class="flex flex-row gap-2">
+
+      <button mat-mini-fab class="!size-8 !bg-green-500" color="secondary" (click)="increaseCampaignScore()">+</button>
+      <button mat-mini-fab class="!size-8 !bg-red-500" (click)="decreaseCampaignScore()">-</button>
+
+    </div>
+
+  </div>
+
+  <div class="border-r-4 border-indigo-500 mx-2"></div>
+
+
+  <div class="flex flex-col w-4/5 h-full">
+
+    <div class="flex flex-col gap-2 h-full">
+
+      <p class="font-bold">{{ campaign().header }}</p>
+      <p class="font-normal">{{ campaign().description }}</p>
+
+      <p>{{campaign().campaignDate |momentFormat: 'DD MMMM YYYY hh:mm' }}</p>
+
+    </div>
+
+    <div class="flex flex-row gap-2">
+
+      <button mat-flat-button class="!bg-green-500 !text-white">
+        Update Campaign
+      </button>
+
+      <button mat-flat-button class="!bg-red-500 !text-white">
+        Delete Campaign
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
