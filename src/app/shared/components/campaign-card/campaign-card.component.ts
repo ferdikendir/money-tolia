@@ -5,8 +5,8 @@ import { MomentFormatPipe } from "../../pipes/moment.pipe";
 import {
   MatDialog
 } from '@angular/material/dialog';
-import { CampaignAddComponent } from "src/app/campaign/campaign-add/campaign-add.component";
 import { CampaignUpdateComponent } from "src/app/campaign/campaign-update/campaign-update.component";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "money-tolia-campaign-card",
@@ -54,7 +54,19 @@ export class CampaignCardComponent {
 
   deleteCampaign() {
 
-    this.campaignService.deleteCampaign(this.campaign().id);
+    Swal.fire({
+      html: `<strong>${this.campaign().header}</strong> will be deleted. Are you sure?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#F44336',
+      cancelButtonColor: '#7a7a7a',
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.value) {
+        this.campaignService.deleteCampaign(this.campaign().id);
+      }
+    });
 
   }
 
