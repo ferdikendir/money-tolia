@@ -19,12 +19,12 @@ export class SidebarComponent {
       children: [
         {
           label: 'Campaign List',
-          route: '/campaigns',
+          route: '/campaign-list',
           type: 'link'
         },
         {
           label: 'Create Campaign',
-          route: '/campaigns/new',
+          route: '/campaign-add',
           type: 'link'
         }
       ]
