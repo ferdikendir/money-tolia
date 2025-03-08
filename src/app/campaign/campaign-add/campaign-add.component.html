@@ -1,4 +1,4 @@
-<div class="flex flex-col" [formGroup]="campaignForm">
+<div class="flex flex-col w-full" [ngClass]="{'xl:w-2/3 lg:w-4/5 md:w-1/1': !isUpdate}" [formGroup]="campaignForm">
 
   <mat-form-field class="!w-full">
     <mat-label>Campaign Header</mat-label>
@@ -8,7 +8,7 @@
 
   <mat-form-field class="!w-full">
     <mat-label>Campaign Description</mat-label>
-    <textarea matInput placeholder="Campaign Description" class="w-full" rows="3"
+    <textarea matInput placeholder="Campaign Description" class="w-full" rows="10"
       formControlName="description"></textarea>
   </mat-form-field>
 

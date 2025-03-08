@@ -18,7 +18,7 @@
 
   <div class="flex flex-col w-4/5 h-full">
 
-    <div class="flex flex-col gap-2 h-full">
+    <div class="flex flex-col gap-2 h-full overflow-auto my-2">
 
       <p class="font-bold">{{ campaign().header }}</p>
       <p class="font-normal">{{ campaign().description }}</p>
@@ -27,7 +27,7 @@
 
     </div>
 
-    <div class="flex flex-row gap-2">
+    <div class="flex flex-col md:flex-row gap-2">
 
       <button mat-flat-button class="!bg-green-500 !text-white" (click)="updateCampaign()">
         Update Campaign
