@@ -14,23 +14,23 @@ export class CampaignService {
   campaigns: Campaign[] = [
     {
       id: 1,
-      score: 1,
-      header: 'Campaign 1',
-      description: 'Description for Campaign 1',
+      score: 10,
+      header: 'İkinci ürüne %50 indirim',
+      description: 'Kırmızı etiketli ürünlerde seçeceğin ikinci ürüne %50 indirim kampanyası başlamıştır.',
       campaignDate: moment().subtract(1, 'days')
     },
     {
       id: 2,
-      score: 2,
-      header: 'Campaign 2',
-      description: 'Description for Campaign 2',
+      score: 30,
+      header: 'Kadınlar gününe özel %20 indirim',
+      description: '8 Mart Kadınlar gününe özel tüm ürünlerde %20 indirim kampanyası başlamıştır.',
       campaignDate: moment().subtract(5, 'days')
     },
     {
       id: 3,
-      score: 3,
-      header: 'Campaign 3',
-      description: 'Description for Campaign 3',
+      score: 20,
+      header: 'Yeni sezona özel %30 indirim',
+      description: 'Yeni sezon ürünlerde %30 indirim kampanyası başlamıştır.',
       campaignDate: moment().subtract(10, 'days')
     }
   ];
@@ -57,7 +57,7 @@ export class CampaignService {
   }
 
   updateCampaign(campaign: Campaign) {
-    console.log('updateCampaign', campaign);
+
     const index = this.campaigns.findIndex(c => c.id === campaign.id);
 
     this.campaigns[index] = campaign;
@@ -65,6 +65,14 @@ export class CampaignService {
     localStorage.setItem('campaigns', JSON.stringify(this.campaigns));
 
     this.campaignSubject.next(this.campaigns);
+  }
+
+  deleteCampaign(id: number) {
+
+    this.campaigns = this.campaigns.filter(c => c.id !== id);
+    localStorage.setItem('campaigns', JSON.stringify(this.campaigns));
+    this.campaignSubject.next(this.campaigns);
+
   }
 
   private getDefaultCampaigns(): Campaign[] {

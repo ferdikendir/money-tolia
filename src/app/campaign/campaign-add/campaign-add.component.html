@@ -12,6 +12,12 @@
       formControlName="description"></textarea>
   </mat-form-field>
 
-  <button mat-flat-button class="ml-auto right-0" color="primary" (click)="addCampaign()"> Add Campaign</button>
+  <button mat-flat-button class="ml-auto right-0" color="primary" (click)="onSubmit()">
+    @if (isUpdate) {
+    Update Campaign
+    } @else {
+    Add Campaign
+    }
+  </button>
 
 </div>
