@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { Campaign, CampaignService } from '@core/api';
-import { MomentFormatPipe } from '../shared/pipes/moment.pipe';
 import { Store } from '@ngrx/store';
 import { getCampaigns } from '@core/store/campaign';
+import { CampaignCardComponent } from '../shared/components/campaign-card/campaign-card.component';
 
 @Component({
   selector: 'money-tolia-campaign',
   imports: [
     SharedModule,
-    MomentFormatPipe
+    CampaignCardComponent
   ],
   templateUrl: './campaign.component.html',
   styleUrl: './campaign.component.scss'
