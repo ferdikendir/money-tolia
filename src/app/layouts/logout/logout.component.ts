@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { LoginService } from '@core/api';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @Component({
@@ -7,10 +8,17 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SharedModule
   ],
   templateUrl: './logout.component.html',
-  styleUrl: './logout.component.scss'
+  styleUrl: './logout.component.scss',
+  providers: [LoginService]
 })
 export class LogoutComponent {
 
   customClass = input<string>();
+
+  private readonly loginService = inject(LoginService);
+
+  onClickLogout() {
+    this.loginService.logout();
+  }
 
 }
