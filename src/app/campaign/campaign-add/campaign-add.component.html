@@ -1,1 +1,23 @@
-<p>campaign-add works!</p>
+<div class="flex flex-col" [formGroup]="campaignForm">
+
+  <mat-form-field class="!w-full">
+    <mat-label>Campaign Header</mat-label>
+    <input matInput placeholder="Campaign Header" class="w-full" formControlName="header">
+  </mat-form-field>
+
+
+  <mat-form-field class="!w-full">
+    <mat-label>Campaign Description</mat-label>
+    <textarea matInput placeholder="Campaign Description" class="w-full" rows="3"
+      formControlName="description"></textarea>
+  </mat-form-field>
+
+  <button mat-flat-button class="ml-auto right-0" color="primary" (click)="onSubmit()">
+    @if (isUpdate) {
+    Update Campaign
+    } @else {
+    Add Campaign
+    }
+  </button>
+
+</div>
