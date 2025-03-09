@@ -25,7 +25,7 @@ export class LayoutComponent {
   }
 
   @HostBinding('style.--sidenav-container-width') get width(): string {
-    return this.screenSize ? '0px' : '280px';
+    return this.screenSize ? '0px' : '220px';
   }
 
   constructor() {
