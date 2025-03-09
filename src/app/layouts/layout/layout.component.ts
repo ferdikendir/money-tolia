@@ -34,4 +34,5 @@ export class LayoutComponent {
     })
   }
 
+  @HostBinding('style.--visible-sidenav') get visible(): string {
 }
