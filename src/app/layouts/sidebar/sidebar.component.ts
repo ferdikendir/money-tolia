@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { SidebarItemComponent } from './sidebar-item/sidebar-item.component';
 import { NavigationItem } from '@core/api/navigation/navigation.model';
+import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'money-tolia-sidebar',
   imports: [
-    SidebarItemComponent
+    SidebarItemComponent,
+    LogoutComponent
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'

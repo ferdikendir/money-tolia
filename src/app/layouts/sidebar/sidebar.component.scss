@@ -4,3 +4,7 @@
   display: var(--visible-sidenav);
   @apply bg-[var(--sidenav-background)];
 }
+
+.sidenav-height {
+  height: calc(100% - var(--navigation-height));
+}
