@@ -13,7 +13,8 @@ import { MaterialModule } from "./material.module";
   ],
   exports: [
     LogoComponent,
-    MaterialModule
+    MaterialModule,
+    CommonModule
   ]
 })
 export class SharedModule { }
