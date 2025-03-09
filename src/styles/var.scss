@@ -1,16 +1,18 @@
 :root {
-    --navigation-height: 64px;
-    --sidenav-container-width: 280px;
-    --background-base: rgb(245, 245, 248);
-    --gutter: 1.5rem;
-    --background-card: #ffffff;
-    --background-app-bar: #ebebee;
-    --sidenav-background: #1a202e;
-    --text-color: #ffffff;
+  --navigation-height: 64px;
+  --sidenav-container-width: 280px;
+  --background-base: rgb(245, 245, 248);
+  --gutter: 1.5rem;
+  --background-card: #ffffff;
+  --background-app-bar: #ebebee;
+  --sidenav-background: #1a202e;
+  --text-color: #ffffff;
 
-    --sidenav-item-background-hover: #141924;
-    --sidenav-item-background-active: #141924;
-    --sidenav-item-color: #A1A2B6;
-    --sidenav-item-color-hover: white;
-    --sidenav-item-color-active: white;
+  --sidenav-item-background-hover: #141924;
+  --sidenav-item-background-active: #141924;
+  --sidenav-item-color: #A1A2B6;
+  --sidenav-item-color-hover: white;
+  --sidenav-item-color-active: white;
+
+  --visible-sidenav: unset;
 }
