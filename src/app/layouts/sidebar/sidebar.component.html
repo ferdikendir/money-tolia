@@ -1,12 +1,19 @@
-<div class="flex flex-row text-white mt-4">
+<div class="flex flex-col h-full ">
+
+  <div class="flex flex-row text-white mt-4 sidenav-height">
 
     <div class="flex flex-col items-center w-full">
 
-        @for (item of navigationItems; track item) {
-        <money-tolia-sidebar-item [item]="item" />
+      @for (item of navigationItems; track item) {
 
-        }
+      <money-tolia-sidebar-item [item]="item" />
+
+      }
 
     </div>
+
+  </div>
+
+  <money-tolia-logout customClass="!bg-white" class="ml-auto mr-3 mb-3" />
 
 </div>

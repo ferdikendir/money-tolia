@@ -1,11 +1,17 @@
-<div class="flex flex-row items-center bg-[var(--background-base)] h-[var(--navigation-height)] gap-2">
+<div class="flex flex-row items-center justify-between bg-[var(--background-base)] h-[var(--navigation-height)] gap-2">
 
-  <money-tolia-logo />
+  <div class="flex flex-row">
 
-  @if(ltMd$ | async) {
+    <money-tolia-logo />
 
-  <money-tolia-side-menu />
+    @if(ltMd$ | async) {
 
-  }
+    <money-tolia-side-menu />
+
+    }
+
+  </div>
+
+  <money-tolia-logout color="none" />
 
 </div>
