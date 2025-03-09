@@ -32,6 +32,13 @@ export class CampaignService {
       header: 'Yeni sezona özel %30 indirim',
       description: 'Yeni sezon ürünlerde %30 indirim kampanyası başlamıştır.',
       campaignDate: moment().subtract(10, 'days')
+    },
+    {
+      id: 4,
+      score: 40,
+      header: 'Ramazan ayına özel gıda sektöründe %50 çip para',
+      description: 'Ramazan ayı boyunca yapacağın her 2000 ₺ ve üzeri harcamanıza %10, QR ödemelerine %12 çip para',
+      campaignDate: moment().startOf('month')
     }
   ];
 
