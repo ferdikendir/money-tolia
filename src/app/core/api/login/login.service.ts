@@ -9,7 +9,9 @@ export class LoginService {
     private userSubject: BehaviorSubject<User> = new BehaviorSubject<User>({} as User);
     user$ = this.userSubject.asObservable();
 
-    constructor() { }
+    constructor() {
+        this.listenLocalStorage();
+    }
 
     login(request: LoginRequest): Observable<Response<LoginResponse>> {
         return of(null).pipe(
@@ -45,12 +47,12 @@ export class LoginService {
         this.userSubject.next({} as User);
     }
 
-    static isLoggedIn(): boolean {
-        return !!localStorage.getItem('token');
-    }
-
     getUser() {
         return this.user$;
+    }
+
+    static isLoggedIn(): boolean {
+        return !!localStorage.getItem('token');
     }
 
     private getSuccessLoginResponse(): Response<LoginResponse> {
@@ -92,5 +94,19 @@ export class LoginService {
             data: {
             } as LoginResponse
         };
+    }
+
+    private listenLocalStorage() {
+
+        window.addEventListener('storage', (event) => {
+            if (event.storageArea === localStorage) {
+                if (!LoginService.isLoggedIn() && '/login' !== location.pathname) {
+                    this.logout();
+                    location.reload();
+                }
+            }
+
+        }, false);
+
     }
 }

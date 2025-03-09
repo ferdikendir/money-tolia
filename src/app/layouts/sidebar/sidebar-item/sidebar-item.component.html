@@ -1,0 +1,21 @@
+<div class="flex flex-col justify-start">
+
+    @if (item().type === 'header') {
+
+    <p class="header opacity-65">{{ item().label }}</p>
+
+
+    @for (child of item().children; track child) {
+
+    <money-tolia-sidebar-item [item]="child" />
+
+    }
+
+    } @else {
+    <a [routerLinkActiveOptions]="{ exact: false }" [routerLink]="item().route"
+        [routerLinkActive]="'sidenav-item--active'" class="sidenav-item sub-header flex justify-start">
+        <span class="sidenav-item__label">{{ item().label }}</span>
+    </a>
+    }
+
+</div>
