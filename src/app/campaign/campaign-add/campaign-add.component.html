@@ -1,4 +1,4 @@
-<div class="flex flex-col xl:w-2/3 lg:w-4/5 md:w-1/1 w-full" [formGroup]="campaignForm">
+<div class="flex flex-col w-full" [ngClass]="{'xl:w-2/3 lg:w-4/5 md:w-1/1': !isUpdate}" [formGroup]="campaignForm">
 
   <mat-form-field class="!w-full">
     <mat-label>Campaign Header</mat-label>
